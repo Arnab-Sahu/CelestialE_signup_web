@@ -2,6 +2,7 @@
 
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { Footer, Navbar } from "../ui/ui";
 
 export default function Home(){
     const tnc = [
@@ -62,6 +63,8 @@ export default function Home(){
         setOpenIndex(openIndex === index ? null : index);
       };
     return (
+      <div className="max-w-screen">
+        <Navbar/>
         <div id="faqs" className="flex flex-col items-center justify-center p-4 bg-gray-100 min-h-screen">
         <div className="flex flex-col items-center justify-center my-24 w-full max-w-4xl">
 
@@ -105,6 +108,8 @@ export default function Home(){
             ))}
           </div>
         </div>
+      </div>
+      <Footer/>
       </div>
     )
 }
