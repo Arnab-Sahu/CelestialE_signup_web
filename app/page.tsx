@@ -57,7 +57,7 @@ export default function Home() {
   };
 
   return (
-      <div className="max-w-screen">
+      <div className="flex flex-wrap max-w-screen">
         <Navbar/>
         <h1 className="mt-64 text-transparent">.</h1>
         <div className="text-center items-center justify-center mx-auto">
