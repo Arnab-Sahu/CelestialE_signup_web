@@ -1,6 +1,6 @@
 export function Navbar() {
     return (
-        <nav className="flex flex-row flex-wrap py-6 fixed top-0 z-50 border-b-2 border-gray-200 items-center justify-between w-full bg-white">
+        <nav className="flex flex-row flex-wrap py-6 fixed top-0 z-50 border-b-2 border-gray-200 items-center justify-between w-full bg-white max-w-screen">
         <div>
             <h1 className="font-extrabold mx-4 text-black text-2xl">CelestialE</h1>
         </div>
@@ -12,7 +12,7 @@ export function Navbar() {
 }
 export function Footer() {
     return (
-        <footer className="flex flex-wrap bg-zinc-900 py-12 mt-auto px-3">
+        <footer className="flex bg-zinc-900 py-12 mt-auto px-3">
         <div className="flex flex-col">
             <div className="flex flex-row gap-5 items-start justify-contents-center">
                 <div className="flex flex-col px-2 tracking-tight">
