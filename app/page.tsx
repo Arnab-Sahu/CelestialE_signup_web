@@ -57,10 +57,10 @@ export default function Home() {
   };
 
   return (
-      <div className="max-w-screen">
+      <div className="w-full overflow-x-hidden">
         <Navbar/>
         <h1 className="mt-64 text-transparent">.</h1>
-        <div className="text-center items-center justify-center mx-auto flex-wrap">
+        <div className="w-full text-center items-center justify-center mx-auto flex-wrap">
             <h1 className="text-5xl font-bold tracking-tight text-balance text-black sm:text-7xl">Beyond Art, Beyond</h1>
             <h1 className="text-5xl font-bold tracking-tight text-balance text-black sm:text-7xl">Imagination—</h1>
             <h1 className="text-5xl font-bold tracking-tight text-balance text-black sm:text-7xl">NFTs Redefine Value</h1>
@@ -213,22 +213,31 @@ export default function Home() {
             <p className="text-xl max-w-xl font-medium text-white">Enjoy the best of both worlds—the trust and transparency of blockchain wrapped in a streamlined, intuitive experience curated just for you. Collect, trade, and showcase with confidence and ease.</p>
         </div>
     </div>
-    <div id="mission" className="flex flex-col items-center justify-content-center p-4 bg-gray-100">
-        <div className="flex flex-wrap flex-row gap-3 items-center justify-center p-10 max-w-screen">
-            <div className="flex flex-col items-center justify-center gap-x-6 gap-y-5">
-                <div className="flex flex-row gap-2">
-                    <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-linear-to-l from-pink-300 via-indigo-700 to-purple-800">Our</h1>
-                    <h1 className="text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-yellow-300 via-amber-500 to-orange-600">Mission</h1>
-                </div>
-                <p className="text-lg text-slate-900 font-medium mb-8 leading-relaxed max-w-xl">
-                        Seamlessly harnessing the power of Polygon's blockchain, we deliver speed and security without compromise. Experience effortless transactions that feel as natural as owning art itself.
-                    </p>
+    <div id="mission" className="w-full bg-gray-100 overflow-hidden">
+    <div className="flex flex-col lg:flex-row items-stretch justify-center w-full">
+        
+        {/* Text Content Block */}
+        <div className="flex flex-col items-center lg:items-start justify-center p-8 lg:p-20 w-full lg:w-1/2 text-center lg:text-left">
+            <div className="flex flex-row gap-2 mb-6">
+                <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-l from-pink-300 via-indigo-700 to-purple-800">Our</h1>
+                <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-yellow-300 via-amber-500 to-orange-600">Mission</h1>
             </div>
-            <div className="flex flex-col items-center justify-center gap-x-6">
-                <img src="images/cele_back.png" alt="" className="relative rounded-3xl max-w-xl max-h-2xl p-3 hover:rotate-3 transition duration-500"/>
-            </div>
+            <p className="text-lg text-slate-900 font-medium leading-relaxed max-w-xl">
+                Seamlessly harnessing the power of Polygon's blockchain, we deliver speed and security without compromise. Experience effortless transactions that feel as natural as owning art itself.
+            </p>
         </div>
+
+        {/* Image Block - Fixed to Cover and Fill Gaps */}
+        <div className="w-full lg:w-1/2 h-64 md:h-96 lg:h-auto min-h-100 overflow-hidden">
+            <img 
+                src="images/cele_back.png" 
+                alt="Celestial Mission" 
+                className="w-full h-full object-cover transition duration-700 hover:scale-110"
+            />
+        </div>
+
     </div>
+</div>
     <div className="flex flex-col items-center justify-center gap-x-6 p-4 bg-linear-to-br from-slate-900 to-zinc-900">
     <div className="flex flex-col items-center justify-center gap-x-6 gap-y-3 my-24 max-h-2xl">
         <div className="flex flex-col items-center justify-center gap-x-6 mb-4">
