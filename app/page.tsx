@@ -60,7 +60,7 @@ export default function Home() {
       <div className="max-w-screen">
         <Navbar/>
         <h1 className="mt-64 text-transparent">.</h1>
-        <div className="text-center items-center justify-center mx-auto">
+        <div className="text-center items-center justify-center mx-auto flex-wrap">
             <h1 className="text-5xl font-bold tracking-tight text-balance text-black sm:text-7xl">Beyond Art, Beyond</h1>
             <h1 className="text-5xl font-bold tracking-tight text-balance text-black sm:text-7xl">Imagination—</h1>
             <h1 className="text-5xl font-bold tracking-tight text-balance text-black sm:text-7xl">NFTs Redefine Value</h1>
@@ -74,7 +74,7 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-center p-10">
               <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-linear-to-r from-yellow-300 via-amber-500 to-orange-600 mt-4 mb-3">Welcome to New Era of Digital Art</h1>
               <p className="text-xl text-center text-black">Step into a world where every digital creation is handpicked for its uniqueness and artistic excellence. Our marketplace isn't just another platform—it's a sanctuary for the truly exceptional.</p>
-              <div className="mt-10 mb-16 flex flex-row items-center justify-center gap-x-6">
+              <div className="mt-10 mb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
                   <div className="flex flex-col items-center justify-center gap-x-6 rounded-2xl shadow-2xl bg-white px-4 py-12 w-60 h-60 hover:rotate-5 transition duration-500">
                       <h1 className="text-4xl font-bold text-black mt-4 mb-3">Latest News</h1>
                       <p className="text-black">Powered by Polygon blockchain for instant transactions</p>
@@ -94,9 +94,9 @@ export default function Home() {
               </div>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-content-center p-4 bg-zinc-900">
-        <div className="flex flex-wrap flex-row gap-3 items-center justify-center p-10 max-w-screen">
-            <div className="flex flex-col items-center justify-center gap-x-6">
+        <div className="flex flex-col items-center justify-content-center p-4 bg-zinc-900 flex-wrap">
+        <div className="flex flex-col lg:flex-row gap-8 items-center justify-center p-6 lg:p-10 w-full">
+            <div className="w-full lg:w-1/2 flex flex-col text-center lg:text-left">
                 <div className="flex flex-col">
                     <h1 className="text-3xl font-bold text-white">Powered by Polygon</h1>
                     <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-linear-to-r from-indigo-300 via-violet-500 to-purple-600">Designed for You</h1>
@@ -105,17 +105,17 @@ export default function Home() {
                     </p>
                 </div>
             </div>
-            <div className="flex flex-col items-center justify-center gap-x-6">
-                <img src="/images/photo-1.jpg" alt="" className="relative rounded-3xl max-w-xl max-h-2xl p-3 hover:rotate-3 transition duration-500"/>
+            <div className="w-full lg:w-1/2 flex justify-center">
+                <img src="/images/photo-1.jpg" alt="" className="rounded-3xl w-full max-w-100 lg:max-w-xl h-auto shadow-2xl hover:rotate-3 transition duration-500"/>
             </div>
         </div>
         </div>
         <div className="flex flex-col items-center justify-content-center p-4 bg-gray-100">
-        <div className="flex flex-wrap flex-row gap-8 items-center justify-center p-10 max-w-screen">
-            <div className="flex flex-col items-center justify-center gap-x-6">
-                <img src="images/photo-2.jpg" alt="" className="relative rounded-3xl max-w-xl max-h-2xl p-3 shadow-2xl mr-4 hover:rotate-3 transition duration-500"/>
+        <div className="flex flex-col lg:flex-row gap-8 items-center justify-center p-6 lg:p-10 w-full">
+            <div className="relative w-full lg:w-1/2 flex justify-center">
+                <img src="images/photo-2.jpg" alt="" className="rounded-3xl w-full max-w-100 lg:max-w-xl h-auto shadow-2xl hover:rotate-3 transition duration-500"/>
             </div>
-            <div className="flex flex-col items-center justify-center gap-x-6">
+            <div className="w-full lg:w-1/2 flex flex-col text-center lg:text-left">
                 <div className="flex flex-col">
                     <h1 className="text-3xl font-bold text-black">Curated for the</h1>
                     <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-linear-to-l from-yellow-300 via-amber-500 to-orange-600">Discerning Collector</h1>
@@ -123,16 +123,16 @@ export default function Home() {
                     Here, exclusivity is not an afterthought—it's the essence. Each NFT will be passed through a meticulous selection process, ensuring that only the finest meet your gaze and your collection.
                     </p>
                     <div className="flex flex-row items-start">
-                        <CircleCheck />
-                        <a className="text-xl font-semibold mb-2">Handpicked by expert curators</a>
+                        <CircleCheck className="text-black"/>
+                        <a className="text-xl font-semibold mb-2 text-black">Handpicked by expert curators</a>
                     </div>
-                    <div className="flex flex-row items-start">
-                        <CircleCheck />
-                        <a className="text-xl font-semibold mb-2">Verified authenticity guaranteed</a>
+                    <div className="flex flex-row items-start text-black">
+                        <CircleCheck className="text-black"/>
+                        <a className="text-xl font-semibold mb-2 text-black">Verified authenticity guaranteed</a>
                     </div>
                     <div className="flex flex-row items-start ">
-                        <CircleCheck />
-                        <a className="text-xl font-semibold mb-2">Premium quality standards</a>
+                        <CircleCheck className="text-black"/>
+                        <a className="text-xl font-semibold mb-2 text-black">Premium quality standards</a>
                     </div>
                 </div>
             </div>
@@ -237,7 +237,7 @@ export default function Home() {
         </div>
         <p className="text-xl max-w-xl font-medium bg-clip-text text-transparent bg-linear-to-l from-green-100 via-teal-400 to-teal-800">Enjoy the best of both worlds—the trust and transparency of blockchain wrapped in a streamlined, intuitive experience curated just for you. Collect, trade, and showcase with confidence and ease.</p>
         <p className="text-xl max-w-xl font-medium text-white">This isn't just about art. It's about what's possible—collecting, connecting, unlocking new forms of expression and belonging. Early signup means never missing out on tomorrow's legacy.</p>
-        <div className="mt-10 mb-16 flex flex-row items-center justify-center gap-x-6">
+        <div className="mt-10 mb-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
                 <div className="flex flex-col items-center justify-center gap-x-6 rounded-2xl shadow-2xl bg-white px-4 py-12 w-60 h-60 bg-linear-to-tr/increasing from-indigo-300 via-violet-500 to-purple-600 hover:rotate-5 transition duration-500">
                     <h1 className="text-4xl font-bold text-black mt-4 mb-3">Secure Platform</h1>
                     <p className="text-white font-medium">Powered by Polygon blockchain for instant transactions</p>
