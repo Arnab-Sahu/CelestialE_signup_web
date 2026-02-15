@@ -9,7 +9,7 @@ export default function Home(){
         if (status.message) {
             const timer = setTimeout(() => {
                 setStatus({ message: "", type: "" });
-            }, 5000); // Message disappears after 5 seconds
+            }, 2000); // Message disappears after 2 seconds
 
             return () => clearTimeout(timer);
         }
@@ -94,4 +94,5 @@ export default function Home(){
         <Footer/>
     </div>
     )
+
 }
