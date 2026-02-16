@@ -5,18 +5,19 @@ export default function Home(){
     const [raw_email, setRaw_email] = useState("")
     const [raw_username, setRaw_username] = useState("")
     const [status, setStatus] = useState({ message: "", type: "" });
+    const [isLoading, setIsLoading] = useState(false);
     useEffect(() => {
         if (status.message) {
             const timer = setTimeout(() => {
                 setStatus({ message: "", type: "" });
-            }, 2000); // Message disappears after 2 seconds
+            }, 2000); // Message disappears after 5 seconds
 
             return () => clearTimeout(timer);
         }
     }, [status]);
     const handleSubmit = async (e: React.SyntheticEvent) => {
         e.preventDefault(); // Prevents the page from refreshing
-
+        setIsLoading(true);
         const response = await fetch("/api/signup", {
             method: "POST",
             headers: {
@@ -86,7 +87,14 @@ export default function Home(){
                         <a className="text-blue-500 hover:underline" href="/terms">terms and conditions</a>
                     </div>
                 </label>
-                <button type="submit" className="px-5 py-1.5 font-medium bg-zinc-800 text-white shadow-zinc-800 hover:bg-slate-950 hover:shadow-slate-950 shadow-2xl rounded-full transition duration-500 mb-8">Submit</button>
+                <button 
+            type="submit" 
+            disabled={isLoading} // 4. Disable when loading
+            className={`px-5 py-1.5 font-medium text-white rounded-full transition duration-500 mb-8 
+                ${isLoading ? "bg-gray-500 cursor-not-allowed" : "bg-zinc-800 hover:bg-slate-950 shadow-2xl shadow-zinc-800"}`}
+        >
+            {isLoading ? "Signing up..." : "Submit"}
+        </button>
             </form>
         </div>
     </div>
@@ -94,5 +102,4 @@ export default function Home(){
         <Footer/>
     </div>
     )
-
 }
