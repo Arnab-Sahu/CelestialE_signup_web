@@ -18,28 +18,35 @@ export default function Home(){
     const handleSubmit = async (e: React.SyntheticEvent) => {
         e.preventDefault(); // Prevents the page from refreshing
         setIsLoading(true);
-        const response = await fetch("/api/signup", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                raw_email: raw_email,
-                raw_username: raw_username,
-            }),
-        });
-        if (response.ok) {
-            console.log("Signup successful!");
-            const data = await response.json()
-            setRaw_email("")
-            setRaw_username("")
-            setStatus({message: data.message, type: data.type})
-        } else {
-            const data = await response.json()
-            console.log("Signup failed.");
-            setRaw_email("")
-            setRaw_username("")
-            setStatus({message: data.message, type: data.type})
+        try {
+            const response = await fetch("/api/signup", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    raw_email: raw_email,
+                    raw_username: raw_username,
+                }),
+            });
+            if (response.ok) {
+                console.log("Signup successful!");
+                const data = await response.json()
+                setRaw_email("")
+                setRaw_username("")
+                setStatus({message: data.message, type: data.type})
+            } else {
+                const data = await response.json()
+                console.log("Signup failed.");
+                setRaw_email("")
+                setRaw_username("")
+                setStatus({message: data.message, type: data.type})
+            }
+        } catch (err){
+            console.error("Fetch error:", err);
+            setStatus({ message: "Network error. Please try again.", type: "error" });
+        } finally {
+            setIsLoading(false);
         }
     };
     return(
